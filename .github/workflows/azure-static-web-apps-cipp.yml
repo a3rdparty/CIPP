@@ -27,6 +27,9 @@ jobs:
         run: yarn build
 
       # Ensure SWA routing/auth config is in the deployed output root
+      - name: Ensure output folder exists
+        run: mkdir -p out
+        
       - name: Copy SWA config into output folder
         run: cp staticwebapp.config.json out/staticwebapp.config.json
 
